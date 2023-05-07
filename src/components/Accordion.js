@@ -6,7 +6,10 @@ function Panel({ title, children }) {
     <section className="panel">
       <h3>{title}</h3>
       {isActive ? (
-        <p>{children}</p>
+        <div>
+          <p>{children}</p>
+          <button onClick={() => setIsActive(false)}>Hide</button>
+        </div>
       ) : (
         <button onClick={() => setIsActive(true)}>Show</button>
       )}
